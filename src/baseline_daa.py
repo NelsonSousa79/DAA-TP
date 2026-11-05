@@ -47,7 +47,7 @@ def avaliar(modelo, X, y, nome):
     out = pd.DataFrame(oof, columns=[f"p{i}" for i in range(16)])
     out.insert(0, "id", train["PID"].values); out.insert(1, "y_true", y.values)
     out.insert(2, "fold", fold_id); out["exp"] = nome
-    out.to_csv(f"oof_{nome}.csv", index=False)
+    out.to_csv(f"oof/oof_{nome}.csv", index=False)
     return sc
 
 avaliar(DummyClassifier(strategy="prior"), X, y, "dummy_v1")
@@ -58,4 +58,4 @@ avaliar(lr, X, y, "lr_v1")
 # submissão de exemplo (treino total) -> CSV com RowId, AGE_RANGE
 lr.fit(X, y)
 Xt = test.drop(columns=DROP + const)
-pd.DataFrame({"RowId": np.arange(len(test)), "AGE_RANGE": lr.predict(Xt)}).to_csv("submission_lr_v1.csv", index=False)
+pd.DataFrame({"RowId": np.arange(len(test)), "AGE_RANGE": lr.predict(Xt)}).to_csv("submissions/submission_lr_v1.csv", index=False)
