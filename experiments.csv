@@ -2,3 +2,7 @@ exp_id,data,autor,modelo,features,preprocessing,hiperparametros,seed,folds,macro
 dummy_v1,2026-11-05,E1,DummyClassifier(prior),originais,-,-,42,5,0.011,0.000,,minimo
 lr_v1,2026-11-05,E1,LogReg class_weight=balanced,originais,imputer+scaler+onehot,C=0.1,42,5,0.430,0.010,0.44,baseline
 rf_v1,2026-11-06,E1,RandomForestClassifier,,,,42,5,0.4234,0.0048,,teste do exemplo
+ens_v1,2026-11-06,E1,VotingClassifier,,,,42,5,0.4670,0.0062,,teste do exemplo
+hgb_v1,2026-11-06,E1,HistGradientBoostingClassifier,,,,42,5,0.4537,0.0079,,teste do exemplo
+lr_v2,2026-11-06,E1,LogisticRegression,,,,42,5,0.4330,0.0088,,teste do exemplo
+ens_v1_b,2026-11-06,E1,VotingClassifier,,,,42,5,0.4670,0.0062,,teste do exemplo
